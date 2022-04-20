@@ -63,6 +63,15 @@ grandpa(X):-parent(Y,X), parent(Z,Y), man(Z),write(Z),nl,fail.
 %_____11____%
 son(X,Y):-parent(Y,X), man(X).
 son(X):-parent(X,Y), man(Y), write(Y),nl,fail.
+%____12___%
+
+
+
+%____13____%
+grand_ma(X,Y):-parent(Z,Y),parent(X,Z),woman(X).
+grand_mas(X):-parent(Y,X), parent(Z,Y), woman(Z), write(Z),nl,fail.
+
+
 
 
 
