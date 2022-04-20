@@ -59,6 +59,12 @@ b_s(X,Y):-mother(Z,X), mother(Z,Y), not(X=Y).
 b_s(X):-b_s(X,Y), write(Y),nl,fail.
 grandpa(X):-parent(Y,X), parent(Z,Y), man(Z),write(Z),nl,fail.
 
+%sooooome noise%
+%_____11____%
+son(X,Y):-parent(Y,X), man(X).
+son(X):-parent(X,Y), man(Y), write(Y),nl,fail.
+
+
 
 
 
