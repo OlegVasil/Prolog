@@ -58,18 +58,24 @@ brother(X):-brother(Bro,X),write(Bro), nl, fail.
 b_s(X,Y):-mother(Z,X), mother(Z,Y), not(X=Y).
 b_s(X):-b_s(X,Y), write(Y),nl,fail.
 grandpa(X):-parent(Y,X), parent(Z,Y), man(Z),write(Z),nl,fail.
+grand_pa(X,Y):-parent(X,Z),parent(Z,Y),man(X).
 
 %sooooome noise%
+
 %_____11____%
 son(X,Y):-parent(Y,X), man(X).
 son(X):-parent(X,Y), man(Y), write(Y),nl,fail.
+
 %____12___%
 sister(X,Y):-mother(Z,X),mother(Z,Y),woman(X),not(X=Y).
 sisters(X):-sister(Sis,X),write(Sis),nl,fail.
+
 %____13____%
 grand_ma(X,Y):-parent(Z,Y),parent(X,Z),woman(X).
 grand_mas(X):-parent(Y,X), parent(Z,Y), woman(Z), write(Z),nl,fail.
+
 %____14____%
+grand_pa_and_da(X,Y):-grand_pa(X,Y),woman(Y);grand_pa(Y,X),woman(X).
 
 
 
