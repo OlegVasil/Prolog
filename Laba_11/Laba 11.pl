@@ -77,7 +77,16 @@ grand_mas(X):-parent(Y,X), parent(Z,Y), woman(Z), write(Z),nl,fail.
 %____14____%
 grand_pa_and_da(X,Y):-grand_pa(X,Y),woman(Y);grand_pa(Y,X),woman(X).
 
+%____15____%
+%Вверх%
+maxDigitU(0,0):-!.
+maxDigitU(X,M):- X1 is X div 10, maxDigitU(X1,M1),M2 is X mod 10,(M2>M1, M is M2;M is M1),!. 
 
+%____16____%
+%Вниз%
+maxDigitD(X,M):- maxDigitD(X,0,M).
+maxDigitD(0,M,M):-!.
+maxDigitD(X,Y,M):-M1 is X mod 10, X1 is X div 10,M1 > Y,!,maxDigitD(X1,M1,M); X2 is X div 10, maxDigitD(X2,Y,M).
 
 
 
