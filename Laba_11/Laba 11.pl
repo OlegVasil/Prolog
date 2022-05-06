@@ -89,8 +89,10 @@ maxDigitD(0,M,M):-!.
 maxDigitD(X,Y,M):-M1 is X mod 10, X1 is X div 10,M1 > Y,!,maxDigitD(X1,M1,M); X2 is X div 10, maxDigitD(X2,Y,M).
 
 %____17____%
+%Вверх%
 DivBy3(0,0):-!.
 DivBy3(X,M):- X1 is X div 10, DivBy3(X1,M1), M2 is X mod 10, (0 is M2 mod 3, M is M2+M1; M is M1),!
+
 
 
 
