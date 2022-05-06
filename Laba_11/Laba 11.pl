@@ -62,11 +62,11 @@ grand_pa(X,Y):-parent(X,Z),parent(Z,Y),man(X).
 
 %sooooome noise%
 
-%_____11____%
+%____11____%
 son(X,Y):-parent(Y,X), man(X).
 son(X):-parent(X,Y), man(Y), write(Y),nl,fail.
 
-%____12___%
+%____12____%
 sister(X,Y):-mother(Z,X),mother(Z,Y),woman(X),not(X=Y).
 sisters(X):-sister(Sis,X),write(Sis),nl,fail.
 
