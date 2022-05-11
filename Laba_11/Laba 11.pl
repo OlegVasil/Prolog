@@ -93,6 +93,24 @@ maxDigitD(X,Y,M):-M1 is X mod 10, X1 is X div 10,M1 > Y,!,maxDigitD(X1,M1,M); X2
 divBy3(0,0):-!.
 divBy3(X,M):- X1 is X div 10, divBy3(X1,M1), M2 is X mod 10, (0 is M2 mod 3, M is M2+M1; M is M1),!.
 
+%____18____%
+%Вниз%
+divBy3D(X,R):-divBy3D(X,0,R).
+divBy3D(0,T,T):-!.
+divBy3D(X,P,R):-D is X mod 10,0 is D mod 3, P1 is (P + D),  X1 is X div 10, divBy3D(X1,P1,R),!; X2 is X div 10,divBy3D(X2,P,R).
+
+%____19____%
+%Вверх%
+fibonach(1,1):-!.
+fibonach(2,1):-!.
+fibonach(N, X):- N1 is N - 1, N2 is N - 2, fibonach(N1, X1), fibonach(N2, X2), X is X1 + X2.
+
+%____20____%
+%Вниз%
+fibonachD(N,X):-fibonachD(1,1,2,N,X).
+fibonachD(_,F,N,N,F):-!.
+fibonachD(A,B,K,N,X):- C is A+B, K1 is K+1,fibonachD(B,C,K1,N,X).
+
 
 
 
