@@ -27,4 +27,4 @@ csD(A,X,I,R):- I1 is I-1,(nod(A,I1,D),D is 1,R1 is R+1,csD(A,X,I1,R1);csD(A,X,I1
 
 %____14____%
 list_length([],0).
-list_length([_|T],I):-list_length(T,I1),I is I1 + 1.
+list_length([_|T],L):-list_length(T,Count),L is Count + 1.
