@@ -24,3 +24,7 @@ csU(A,X,I):- I1 is I-1, csU(A,X1,I1),(nod(A,I1,D),D is 1,X is X1+1;X is X1),!.
 countSimpleD(A,X):- csD(A,X,A,0).
 csD(A,R,0,R):-!.
 csD(A,X,I,R):- I1 is I-1,(nod(A,I1,D),D is 1,R1 is R+1,csD(A,X,I1,R1);csD(A,X,I1,R)),!.
+
+%____14____%
+list_length([],0).
+list_length([_|T],I):-list_length(T,I1),I is I1 + 1.
