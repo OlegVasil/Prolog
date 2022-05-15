@@ -15,12 +15,12 @@ delete([Head|Tail], Elem, [Head|ResultTail]):-
 nod(N,0,N):-!.
 nod(N,M,R):-M1 is N mod M,N1 is M,nod(N1,M1,R).
 
-%Ââåðõ%
-countSimpleD(A,X):- csD(A,X,A,0).
-csD(A,R,0,R):-!.
-csD(A,X,I,R):- I1 is I-1,(nod(A,I1,D),D is 1,R1 is R+1,csD(A,X,I1,R1);csD(A,X,I1,R)),!.
-
-%Âíèç%
+%Ð’Ð²ÐµÑ€Ñ…%
 countSimpleU(A,X):- csU(A,X,A).
 csU(A,X,0):-X is 0,!.
 csU(A,X,I):- I1 is I-1, csU(A,X1,I1),(nod(A,I1,D),D is 1,X is X1+1;X is X1),!.
+
+%Ð’Ð½Ð¸Ð·%
+countSimpleD(A,X):- csD(A,X,A,0).
+csD(A,R,0,R):-!.
+csD(A,X,I,R):- I1 is I-1,(nod(A,I1,D),D is 1,R1 is R+1,csD(A,X,I1,R1);csD(A,X,I1,R)),!.
